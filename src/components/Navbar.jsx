@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../assets/logo.png";
 import Button from "react-bootstrap/Button";
-import { Link, NavLink } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
+import { NavLink } from "react-router-dom";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+// navbar items data
 const linksData = [
   {
     label: "Home",
@@ -52,12 +53,23 @@ function NavBar() {
           className="d-flex align-items-center logo-container"
         >
           <img src={logo} className="img-fluid logo" alt="brand" />
-          <a
-            href="mailto:abdallah.ahmed2022222@gmail.com"
-            className="text-decoration-none fw-bold ps-3"
+
+          <OverlayTrigger
+            placement="right"
+            delay={{ show: 200, hide: 200 }}
+            overlay={
+              <Tooltip id="button-tooltip" className="fw-bold">
+                Mail Me Now !!
+              </Tooltip>
+            }
           >
-            mail@Abdallah Ahmed
-          </a>
+            <a
+              href="mailto:abdallah.ahmed2022222@gmail.com"
+              className="text-decoration-none fw-bold ps-3"
+            >
+              mail@Abdallah Ahmed
+            </a>
+          </OverlayTrigger>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -70,79 +82,42 @@ function NavBar() {
           <span></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
+          <Nav className="ms-auto align-items-center" defaultActiveKey="#home">
             {linksData.map((link) => (
-              <NavLink
-                to={link.to}
+              <OverlayTrigger
                 key={link.label}
-                className={({ isActive, isPending }) =>
-                  `${
-                    isPending ? `pending` : isActive ? "active" : ""
-                  } text-decoration-none p-4 fw-bold nav_links`
+                placement="bottom"
+                delay={{ show: 200, hide: 200 }}
+                overlay={
+                  <Tooltip id="button-tooltip" className="fw-bold">
+                    {link.label}
+                  </Tooltip>
                 }
-                onClick={() => updateExpanded(false)}
               >
-                {link.label}
-              </NavLink>
+                <NavLink
+                  to={link.to}
+                  className={({ isActive, isPending }) =>
+                    `${
+                      isPending ? `pending` : isActive ? "active" : ""
+                    } text-decoration-none px-4 fw-bold nav_links`
+                  }
+                  onClick={() => updateExpanded(false)}
+                >
+                  {link.label}
+                </NavLink>
+              </OverlayTrigger>
             ))}
 
-            <Nav.Item className="fork-btn">
+            <Nav.Item className="fork-btn p-0 ms-1">
               <Button
                 href="https://github.com/soumyajit4419/Portfolio"
                 target="_blank"
-                className="fork-btn-inner"
+                className="fork-btn-inner fw-bold"
               >
-                hire me
+                Hire Me
               </Button>
             </Nav.Item>
           </Nav>
-
-          {/* <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                Home
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
-                About
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
-              >
-                Projects
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                target="_blank"
-                to="https://github.com/abdallah-ahmed222"
-              >
-                My GitHub
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/soumyajit4419/Portfolio"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                hire me
-              </Button>
-            </Nav.Item>
-          </Nav> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
