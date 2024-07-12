@@ -176,6 +176,19 @@ button:focus {
     }
   }
 }
+.active {
+  color: #cd5ff8 !important;
+}
+/* tool tip */
+.tooltip-inner {
+  background-color: #57186f !important;
+  opacity: 1 !important;
+  box-shadow: -2px 3px 5px 1px #350b45;
+}
+
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: #57186f !important;
+}
 
 .navbar-nav .nav-link {
   color: white !important;
@@ -737,17 +750,15 @@ button:focus {
 }
 
 .fork-btn-inner {
-  line-height: 1.4em !important;
-  background-color: #934cce5e !important;
-  padding: 0.25rem 1.1rem !important;
-  vertical-align: middle !important;
-  text-align: center !important;
+  background-image: linear-gradient(to right, #57186f, #2a1454);
+  padding: 0.5rem 2rem !important;
+  border-radius: 25px !important;
+  transition: 0.3s !important;
+  border: 0 !important;
 }
 
 .fork-btn-inner:hover {
   transform: translateY(-2px) !important;
-  background-color: #a24dd386 !important;
-  border-color: #a24dd386 !important;
 }
 .fork-btn-inner::after {
   display: none !important;
