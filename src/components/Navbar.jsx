@@ -12,18 +12,17 @@ const linksData = [
   {
     label: "Home",
     to: "/",
+    target: "",
   },
   {
     label: "About",
     to: "/about",
+    target: "",
   },
   {
     label: "Works",
     to: "/project",
-  },
-  {
-    label: "My GitHub",
-    to: "https://github.com/abdallah-ahmed222",
+    target: "",
   },
 ];
 
@@ -96,6 +95,7 @@ function NavBar() {
               >
                 <NavLink
                   to={link.to}
+                  target={link.target}
                   className={({ isActive, isPending }) =>
                     `${
                       isPending ? `pending` : isActive ? "active" : ""
@@ -110,7 +110,7 @@ function NavBar() {
 
             <Nav.Item className="fork-btn p-0 ms-1">
               <Button
-                href="https://github.com/soumyajit4419/Portfolio"
+                href="https://github.com/abdallah-ahmed222"
                 target="_blank"
                 className="fork-btn-inner fw-bold"
               >
