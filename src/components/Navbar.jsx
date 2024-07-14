@@ -4,28 +4,10 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../assets/logo.png";
 import Button from "react-bootstrap/Button";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-// navbar items data
-const linksData = [
-  {
-    label: "Home",
-    to: "/",
-    target: "",
-  },
-  {
-    label: "About",
-    to: "/about",
-    target: "",
-  },
-  {
-    label: "Works",
-    to: "/project",
-    target: "",
-  },
-];
-
+import { navLinksData } from "../helpers/data";
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
@@ -36,9 +18,7 @@ function NavBar() {
       updateNavbar(false);
     }
   }
-
   window.addEventListener("scroll", scrollHandler);
-
   return (
     <Navbar
       expanded={expand}
@@ -47,11 +27,10 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand
-          href="/"
-          className="d-flex align-items-center logo-container"
-        >
-          <img src={logo} className="img-fluid logo" alt="brand" />
+        <div className="logo-container d-flex align-items-center">
+          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center ">
+            <img src={logo} className="img-fluid logo" alt="brand" />
+          </Navbar.Brand>
 
           <OverlayTrigger
             placement="right"
@@ -64,12 +43,13 @@ function NavBar() {
           >
             <a
               href="mailto:abdallah.ahmed2022222@gmail.com"
-              className="text-decoration-none fw-bold ps-3"
+              className="text-decoration-none fw-bold pt-1"
             >
               mail@Abdallah Ahmed
             </a>
           </OverlayTrigger>
-        </Navbar.Brand>
+        </div>
+
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -82,7 +62,7 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto align-items-center" defaultActiveKey="#home">
-            {linksData.map((link) => (
+            {navLinksData.map((link) => (
               <OverlayTrigger
                 key={link.label}
                 placement="bottom"

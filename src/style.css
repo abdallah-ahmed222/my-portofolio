@@ -122,7 +122,7 @@ button:focus {
 
 .nav_links {
   color: white !important;
-  font-size: 1rem;
+  font-size: 1rem !important;
   transition: 0.3s;
   &:hover {
     color: #cd5ff8 !important;
@@ -378,6 +378,8 @@ button:focus {
 .main-name {
   background-image: linear-gradient(to right, #57186f 0%, #ffffff 100%);
   -webkit-background-clip: text;
+  background-clip: text;
+
   -webkit-text-fill-color: transparent;
 }
 
@@ -385,6 +387,7 @@ button:focus {
   font-size: 2.2em !important;
   background-image: linear-gradient(to right, #cd5ff8 0%, #ffffff 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800 !important;
 }
@@ -435,18 +438,8 @@ button:focus {
   text-align: left;
 }
 
-.home-about-social {
-  text-align: center !important;
-  padding-top: 25px;
-  color: white !important;
-}
-
-.home-about-social-links {
-  justify-content: center !important;
-  padding-top: 15px !important;
-  display: inline-block !important;
-  position: relative !important;
-  padding-inline-start: 0 !important;
+.home-about-social h1 {
+  font-family: "Sora", sans-serif;
 }
 
 .home-social-icons {
@@ -461,7 +454,116 @@ button:focus {
   border-radius: 50% !important;
   transition: 0.5s !important;
 }
-
+.test-hover {
+  height: 400px;
+  .test-hover_title {
+    width: 30%;
+  }
+}
+.tracker {
+  position: absolute;
+  width: 100%;
+  height: calc(100% / 4);
+  z-index: -1;
+  background-image: linear-gradient(to right, #57186f, #2a1454);
+  left: 0;
+  top: 0;
+  transition: 0.5s;
+  display: none;
+}
+.test-hover a {
+  display: block;
+  height: calc(100% / 4);
+  border-bottom: 1px solid #57186f;
+  transition: 0.5s;
+  &:hover {
+    border-color: white !important;
+  }
+}
+.test-hover a:nth-child(1) {
+  span svg,
+  span {
+    transition: 0.5s;
+    color: #57186f;
+  }
+  span svg {
+    transform: rotate(-45deg);
+  }
+  &:hover ~ .tracker {
+    top: 0%;
+    display: block;
+  }
+  &:hover span,
+  &:hover span svg {
+    color: white;
+  }
+  &:hover span svg {
+    transform: rotate(0deg);
+  }
+}
+.test-hover a:nth-child(2) {
+  span svg,
+  span {
+    transition: 0.5s;
+    color: #57186f;
+  }
+  span svg {
+    transform: rotate(-45deg);
+  }
+  &:hover ~ .tracker {
+    top: 25%;
+    display: block;
+  }
+  &:hover span,
+  &:hover span svg {
+    color: white;
+  }
+  &:hover span svg {
+    transform: rotate(0deg);
+  }
+}
+.test-hover a:nth-child(3) {
+  span svg,
+  span {
+    transition: 0.5s;
+    color: #57186f;
+  }
+  span svg {
+    transform: rotate(-45deg);
+  }
+  &:hover ~ .tracker {
+    top: 50%;
+    display: block;
+  }
+  &:hover span,
+  &:hover span svg {
+    color: white;
+  }
+  &:hover span svg {
+    transform: rotate(0deg);
+  }
+}
+.test-hover a:nth-child(4) {
+  span svg,
+  span {
+    transition: 0.5s;
+    color: #57186f;
+  }
+  span svg {
+    transform: rotate(-45deg);
+  }
+  &:hover ~ .tracker {
+    top: 75%;
+    display: block;
+  }
+  &:hover span,
+  &:hover span svg {
+    color: white;
+  }
+  &:hover span svg {
+    transform: rotate(0deg);
+  }
+}
 .home-social-icons::before {
   content: "";
   position: absolute;
@@ -501,7 +603,7 @@ button:focus {
 /* Footer */
 /* --------- */
 .footer {
-  background-color: rgb(10, 4, 22);
+  background-color: #140c1c;
   bottom: 0 !important;
   padding-top: 10px !important;
   padding-bottom: 8px !important ;
@@ -539,6 +641,16 @@ button:focus {
 
 .blockquote-footer {
   color: #a588c0 !important;
+}
+/* scroll-to-top */
+.scroll-to-top {
+  background-color: #68187a !important;
+  border-radius: 50% !important;
+  box-shadow: 0px 0px 8px 1px #cd5ff8 !important;
+  svg {
+    fill: white;
+    height: 15px !important;
+  }
 }
 /* --------- */
 /* Projects */

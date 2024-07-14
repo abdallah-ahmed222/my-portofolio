@@ -2,37 +2,17 @@ import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../assets/home-main.svg";
 import Home2 from "./Home2";
 import Type from "./Type";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { FaFacebook, FaDownload } from "react-icons/fa6";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
-import { Link } from "react-router-dom";
+import { FaDownload } from "react-icons/fa6";
 import cv from "../../assets/abdallah_ahmed-cv.pdf";
-const linksData = [
-  {
-    label: "Facebook",
-    to: "https://www.facebook.com/profile.php?id=100074432431981&mibextid=ZbWKwL",
-    element: <FaFacebook />,
-  },
-  {
-    label: "Linked In",
-    to: "https://www.linkedin.com/in/abdallah-ahmed-783512231/",
-    element: <FaLinkedinIn />,
-  },
-  {
-    label: "GitHub",
-    to: "https://github.com/abdallah-ahmed222",
-    element: <FaGithub />,
-  },
-];
+import LinksComponent from "../LinksComponent";
+
 function Home() {
-  console.log(cv);
   return (
     <section>
       <Container fluid className="home-section" id="home">
         <Container className="home-content">
           <Row className="position-relative w-100">
-            <div className="greating ">HI</div>
+            <div className="greating ">HI!</div>
             <Col md={7} className="home-header p-0 ps-3 ">
               <h1 className="heading-name fw-bold ps-3 ">
                 I am
@@ -57,7 +37,8 @@ function Home() {
                 >
                   Download CV <FaDownload className="pb-1 fs-5" />
                 </a>
-                {linksData.map((link) => (
+                <LinksComponent />
+                {/* {homeLinksData.map((link) => (
                   <OverlayTrigger
                     key={link.label}
                     placement="bottom"
@@ -76,7 +57,7 @@ function Home() {
                       {link.element}
                     </Link>
                   </OverlayTrigger>
-                ))}
+                ))} */}
               </div>
             </Col>
 
