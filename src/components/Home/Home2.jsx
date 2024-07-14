@@ -9,7 +9,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 function Home2() {
   useEffect(() => {
-    Aos.init({ duration: 2000, once: true, delay: 1000 });
+    Aos.init({ duration: 2000, once: true, delay: 500 });
   }, []);
   return (
     <Container fluid className="home-about-section" id="about">
