@@ -95,7 +95,11 @@ function Home2() {
         </div>
         <Row className="mt-5 align-items-center ">
           <Col md={8} className="home-about-social text-start">
-            <h2 className="main-name fs-2 fw-bold">Let’s work together!</h2>
+            <h2 className="main-name fs-1 fw-bold">Let’s work together!</h2>
+            <p className="w-50 text-white pt-1">
+              I design and code beautifully simple things and i love what i do.
+              Just simple like that!
+            </p>
             <div className="links-container w-25 d-flex justify-content-between align-items-center pt-2 pe-5">
               <LinksComponent />
             </div>
