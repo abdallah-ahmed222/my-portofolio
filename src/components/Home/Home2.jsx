@@ -100,7 +100,7 @@ function Home2() {
               I design and code beautifully simple things and i love what i do.
               Just simple like that!
             </p>
-            <div className="links-container w-25 d-flex justify-content-between align-items-center pt-2 pe-5">
+            <div className="links-container w-50 d-flex justify-content-between align-items-center pt-2 pe-5">
               <LinksComponent />
             </div>
           </Col>

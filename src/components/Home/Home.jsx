@@ -12,8 +12,11 @@ function Home() {
       <Container fluid className="home-section" id="home">
         <Container className="home-content">
           <Row className="position-relative w-100">
-            <div className="greating ">HI!</div>
-            <Col md={7} className="home-header p-0 ps-3 ">
+            <div className="greating d-none d-md-block">HI!</div>
+            <Col
+              md={7}
+              className="home-header p-0 ps-3 order-last order-md-first"
+            >
               <h1 className="heading-name fw-bold ps-3 ">
                 I am
                 <span className="main-name"> Abdallah</span>{" "}
@@ -38,33 +41,13 @@ function Home() {
                   Download CV <FaDownload className="pb-1 fs-5" />
                 </a>
                 <LinksComponent />
-                {/* {homeLinksData.map((link) => (
-                  <OverlayTrigger
-                    key={link.label}
-                    placement="bottom"
-                    delay={{ show: 200, hide: 200 }}
-                    overlay={
-                      <Tooltip id="button-tooltip" className="fw-bold">
-                        {link.label}
-                      </Tooltip>
-                    }
-                  >
-                    <Link
-                      className="links-container_link text-decoration-none"
-                      to={link.to}
-                      target="blank"
-                    >
-                      {link.element}
-                    </Link>
-                  </OverlayTrigger>
-                ))} */}
               </div>
             </Col>
 
             <Col
               md={5}
               style={{ paddingBottom: 20 }}
-              className="position-relative"
+              className="position-relative order-first order-md-last"
             >
               <div className="ps-5">
                 <img
