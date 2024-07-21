@@ -1,5 +1,5 @@
 import { FaFacebook } from "react-icons/fa6";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaMailBulk } from "react-icons/fa";
 
 // nav links
 export const navLinksData = [
@@ -35,5 +35,10 @@ export const homeLinksData = [
     label: "GitHub",
     to: "https://github.com/abdallah-ahmed222",
     element: <FaGithub />,
+  },
+  {
+    label: "Mail Me",
+    to: "mailto:abdallah.ahmed2022222@gmail.com",
+    element: <FaMailBulk />,
   },
 ];

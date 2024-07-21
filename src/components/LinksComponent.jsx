@@ -17,7 +17,7 @@ export default function LinksComponent() {
           }
         >
           <Link
-            className="links-container_link text-decoration-none"
+            className="links-container_link text-decoration-none mx-1"
             to={link.to}
             target="blank"
           >
