@@ -280,8 +280,24 @@ button:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  p {
+    width: 75%;
+    @media (width < 575px) {
+      width: 100%;
+    }
+  }
+  .text {
+    height: auto;
+    @media (width < 757px) {
+      height: 2.6rem;
+    }
+  }
 }
-
+.links-container {
+  @media (width < 991px) {
+    width: 100% !important;
+  }
+}
 .home-section {
   overflow: hidden;
   position: relative;
@@ -325,7 +341,7 @@ button:focus {
   border-radius: 50%;
   border: 2px solid #57186f;
   color: #cd5ff8;
-  transition: 0.7s;
+  transition: 0.9s;
   &:hover,
   &:focus {
     box-shadow: inset 0 0 0 2em #57186f;
@@ -370,6 +386,10 @@ button:focus {
   border-radius: 25px;
   transform: rotate(5deg);
   transition: 0.2s;
+  max-height: 500px;
+  @media (width < 768px) {
+    max-height: 300px;
+  }
   &:hover {
     border-color: #712c8c;
     transform: rotate(0deg);
@@ -425,6 +445,12 @@ button:focus {
   padding-top: 70px !important;
 }
 
+.title-container {
+  width: 50%;
+  @media (width < 992px) {
+    width: 100%;
+  }
+}
 .home-about-description {
   color: white !important;
   padding-top: 100px !important;
@@ -458,12 +484,16 @@ button:focus {
   height: 400px;
   .test-hover_title {
     width: 30%;
+    @media (width < 991px) {
+      font-size: 1rem !important;
+      width: 90%;
+    }
   }
 }
 .tracker {
   position: absolute;
   width: 100%;
-  height: calc(100% / 4);
+  height: calc(100% / 3);
   z-index: -1;
   background-image: linear-gradient(to right, #57186f, #2a1454);
   left: 0;
@@ -473,7 +503,7 @@ button:focus {
 }
 .test-hover a {
   display: block;
-  height: calc(100% / 4);
+  height: calc(100% / 3);
   border-bottom: 1px solid #57186f;
   transition: 0.5s;
   &:hover {
@@ -511,7 +541,7 @@ button:focus {
     transform: rotate(-45deg);
   }
   &:hover ~ .tracker {
-    top: 25%;
+    top: 33.3333333333333%;
     display: block;
   }
   &:hover span,
@@ -532,7 +562,7 @@ button:focus {
     transform: rotate(-45deg);
   }
   &:hover ~ .tracker {
-    top: 50%;
+    top: 66.6666666666666%;
     display: block;
   }
   &:hover span,
@@ -543,27 +573,7 @@ button:focus {
     transform: rotate(0deg);
   }
 }
-.test-hover a:nth-child(4) {
-  span svg,
-  span {
-    transition: 0.5s;
-    color: #57186f;
-  }
-  span svg {
-    transform: rotate(-45deg);
-  }
-  &:hover ~ .tracker {
-    top: 75%;
-    display: block;
-  }
-  &:hover span,
-  &:hover span svg {
-    color: white;
-  }
-  &:hover span svg {
-    transform: rotate(0deg);
-  }
-}
+
 .home-social-icons::before {
   content: "";
   position: absolute;

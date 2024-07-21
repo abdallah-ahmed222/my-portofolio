@@ -5,8 +5,6 @@ import Container from "react-bootstrap/Container";
 import logo from "../assets/logo.png";
 import Button from "react-bootstrap/Button";
 import { Link, NavLink } from "react-router-dom";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
 import { navLinksData } from "../helpers/data";
 
 function NavBar() {
@@ -47,31 +45,21 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto align-items-center" defaultActiveKey="#home">
             {navLinksData.map((link) => (
-              <OverlayTrigger
+              <NavLink
                 key={link.label}
-                placement="bottom"
-                delay={{ show: 100, hide: 100 }}
-                overlay={
-                  <Tooltip id="button-tooltip" className="fw-bold">
-                    {link.label}
-                  </Tooltip>
+                to={link.to}
+                target={link.target}
+                className={({ isActive, isPending }) =>
+                  `${
+                    isPending ? `pending` : isActive ? "active" : ""
+                  } text-decoration-none px-4 fw-bold nav_links my-1`
                 }
+                onClick={() => updateExpanded(false)}
               >
-                <NavLink
-                  to={link.to}
-                  target={link.target}
-                  className={({ isActive, isPending }) =>
-                    `${
-                      isPending ? `pending` : isActive ? "active" : ""
-                    } text-decoration-none px-4 fw-bold nav_links my-1`
-                  }
-                  onClick={() => updateExpanded(false)}
-                >
-                  {link.label}
-                </NavLink>
-              </OverlayTrigger>
+                {link.label}
+              </NavLink>
             ))}
-            <Nav.Item className="fork-btn p-0 ms-1 d-none d-lg-block">
+            <Nav.Item className="fork-btn p-0 ms-1 d-none d-md-block">
               <Button
                 href="https://www.linkedin.com/in/abdallah-ahmed-783512231/"
                 target="_blank"
