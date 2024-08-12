@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../assets/avatar.svg";
+import myImg from "../../assets/smile.png";
 import Tilt from "react-parallax-tilt";
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
@@ -92,7 +92,11 @@ function Home2() {
           </Col>
           <Col md={4} className="myAvtar p-0 order-first order-md-last mb-2">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img
+                src={myImg}
+                className="img-fluid rounded-circle"
+                alt="avatar"
+              />
             </Tilt>
           </Col>
         </Row>

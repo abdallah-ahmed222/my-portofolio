@@ -1,15 +1,48 @@
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../assets/home-main.svg";
+import homeLogo from "../../assets/hero.png";
 import Home2 from "./Home2";
 import Type from "./Type";
 import { FaDownload } from "react-icons/fa6";
 import cv from "../../assets/abdallah_ahmed-cv.pdf";
 import LinksComponent from "../LinksComponent";
+import About from "../About/About";
+import { useState } from "react";
+import { FaHome } from "react-icons/fa";
+import { GrServices } from "react-icons/gr";
+import { MdWorkspacePremium } from "react-icons/md";
+import { FaBarsProgress, FaCode } from "react-icons/fa6";
 
 function Home() {
+  const [show, setShow] = useState(false);
   console.log(100 % +3);
   return (
     <section>
+      <div id="circularMenu" className="circular-menu">
+        <button
+          className="p-0 floating-btn d-flex align-items-center justify-content-center"
+          onClick={() => {
+            setShow(true);
+            document.getElementById("circularMenu").classList.toggle("active");
+          }}
+        >
+          <FaBarsProgress className="fs-3" />
+        </button>
+
+        <menu className="items-wrapper">
+          <a href="#" className="menu-item fa fa-facebook">
+            <FaHome />
+          </a>
+          <a href="#" className="menu-item fa fa-twitter">
+            <GrServices />
+          </a>
+          <a href="#" className="menu-item fa fa-google-plus">
+            <FaCode />
+          </a>
+          <a href="#" className="menu-item fa fa-linkedin">
+            <MdWorkspacePremium />
+          </a>
+        </menu>
+      </div>
       <Container fluid className="home-section" id="home">
         <Container className="home-content">
           <Row className="position-relative w-100">
@@ -73,6 +106,7 @@ function Home() {
         </Container>
       </Container>
       <Home2 />
+      <About />
     </section>
   );
 }
