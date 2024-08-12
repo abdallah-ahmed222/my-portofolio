@@ -92,7 +92,7 @@ function Home() {
               className="position-relative order-first order-md-last d-flex align-items-center justify-content-center"
             >
               <div
-                className="ps-5 d-flex justify-content-center"
+                className="ps-5 d-flex justify-content-center hero-image_container position-relative"
                 style={{ maxHeight: "90%" }}
               >
                 <img
