@@ -23,11 +23,15 @@ function NavBar() {
       expanded={expand}
       fixed="top"
       expand="md"
-      className={navColour ? "sticky" : "navbar"}
+      className={`${navColour ? `sticky` : `navbar`} py-0`}
     >
       <Container>
         <div className="logo-container">
-          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center ">
+          <Navbar.Brand
+            as={Link}
+            to="/"
+            className="d-flex align-items-center py-0 "
+          >
             <img src={logo} className="img-fluid logo" alt="brand" />
           </Navbar.Brand>
         </div>
@@ -65,7 +69,7 @@ function NavBar() {
                 target="_blank"
                 className="fork-btn-inner fw-bold"
               >
-                Hire Me
+                Hire Me !
               </Button>
             </Nav.Item>
           </Nav>
