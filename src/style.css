@@ -55,7 +55,7 @@ button:focus {
 }
 .bread-crumb_bg {
   height: 30vh;
-  background-image: url(./assets/breadcrumb-bg.jpg);
+  background-image: url(./assets/wave.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -143,12 +143,10 @@ button:focus {
   border-radius: 12px;
 }
 
-/* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover {
-  background: #663abc;
-  border-radius: 12px;
-} */
-
+.activeBtn {
+  background-color: white !important;
+  color: var(--main-color) !important;
+}
 /* --------- */
 /* Navbar Section  */
 /* --------- */
@@ -1172,7 +1170,7 @@ button:focus {
   width: 3.5em;
   height: 3.5em;
   border-radius: 50%;
-  background-color: transparent;
+  background-color: white;
   text-align: center;
   line-height: 3.9;
   cursor: pointer;
@@ -1183,7 +1181,7 @@ button:focus {
 .circular-menu .floating-btn svg {
   font-size: 1.3em;
   transition: transform 0.2s;
-  color: white !important;
+  color: var(--main-color) !important;
 }
 
 .circular-menu.active .floating-btn svg {

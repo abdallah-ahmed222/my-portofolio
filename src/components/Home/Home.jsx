@@ -6,42 +6,62 @@ import { FaDownload } from "react-icons/fa6";
 import cv from "../../assets/abdallah_ahmed-cv.pdf";
 import LinksComponent from "../LinksComponent";
 import About from "../About/About";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaHome } from "react-icons/fa";
 import { GrServices } from "react-icons/gr";
 import { MdWorkspacePremium } from "react-icons/md";
 import { FaBarsProgress, FaCode } from "react-icons/fa6";
 
 function Home() {
-  const [show, setShow] = useState(false);
-  console.log(100 % +3);
+  const [distnation, setDistnation] = useState("home")
+  useEffect(() => {
+    const section = document.getElementById(distnation);
+    const rect = section.getBoundingClientRect();
+    window.scrollTo(0, (rect.y - 50 == 50 ? rect.y : rect.y - 50));
+    // console.log(rect);
+
+  }, [distnation])
+  // const handleGoTo = (eleId) => {
+
+  // };
   return (
-    <section>
+    <section id="home">
       <div id="circularMenu" className="circular-menu">
         <button
           className="p-0 floating-btn d-flex align-items-center justify-content-center"
           onClick={() => {
-            setShow(true);
             document.getElementById("circularMenu").classList.toggle("active");
           }}
         >
           <FaBarsProgress className="fs-3" />
         </button>
 
-        <menu className="items-wrapper">
-          <a href="#" className="menu-item fa fa-facebook">
+        <div className={`items-wrapper`}>
+          <button
+            onClick={() => setDistnation("home")}
+            className={`menu-item fa fa-facebook ${distnation == "home" ? `activeBtn` : ``}`}
+          >
             <FaHome />
-          </a>
-          <a href="#" className="menu-item fa fa-twitter">
+          </button>
+          <button
+            onClick={() => setDistnation("skills")}
+            className={`menu-item fa fa-twitter ${distnation == "skills" ? `activeBtn` : ``}`}
+          >
             <GrServices />
-          </a>
-          <a href="#" className="menu-item fa fa-google-plus">
+          </button>
+          <button
+            onClick={() => setDistnation("about")}
+            className={`menu-item fa fa-google-plus ${distnation == "about" ? `activeBtn` : ``}`}
+          >
             <FaCode />
-          </a>
-          <a href="#" className="menu-item fa fa-linkedin">
+          </button>
+          <button onClick={() => setDistnation("home")}
+            className={`menu-item fa fa-linkedin ${distnation == "home" ? `activeBtn` : ``}`}
+
+          >
             <MdWorkspacePremium />
-          </a>
-        </menu>
+          </button>
+        </div>
       </div>
       <Container fluid className="home-section" id="home">
         <Container className="home-content">

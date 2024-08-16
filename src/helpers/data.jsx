@@ -20,11 +20,6 @@ export const navLinksData = [
     target: "",
   },
   {
-    label: "Skills",
-    to: "/skills",
-    target: "",
-  },
-  {
     label: "Works",
     to: "/project",
     target: "",
