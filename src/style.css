@@ -379,8 +379,7 @@ button:focus {
   /* var(--image-gradient), url(./assets/home-bg.jpg); */
   background-position: top center;
   background-repeat: no-repeat;
-  padding-bottom: 30px !important;
-  padding-top: 30px !important;
+  padding: 50px 0 !important;
   &::before {
     content: "";
     position: absolute;
@@ -485,7 +484,10 @@ button:focus {
   border-radius: 25px;
   transform: rotate(5deg);
   transition: 0.2s;
-  max-height: 500px;
+  max-height: 420px;
+
+  height: 400px !important;
+  width: 400px !important;
   @media (width < 768px) {
     max-height: 300px;
   }
@@ -800,9 +802,15 @@ button:focus {
 /* --------- */
 .project-section {
   position: relative !important;
-  padding-top: 150px !important;
-  padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+
+  background: #140f23;
+  .main-name {
+    background-image: linear-gradient(
+      to right,
+      var(--main-color) 30%,
+      white 100%
+    ) !important;
+  }
 }
 
 .project-card {
@@ -814,7 +822,7 @@ button:focus {
 }
 
 .project-card-view {
-  box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
+  box-shadow: 0 4px 5px 3px var(--main-color) !important;
   color: white !important;
   background-color: transparent !important;
   opacity: 0.9 !important;
@@ -824,7 +832,7 @@ button:focus {
 .project-card-view:hover {
   transform: scale(1.02) !important;
   overflow: hidden !important;
-  box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
+  box-shadow: 0 4px 4px 5px var(--main-color) !important;
 }
 
 .blog-card {
@@ -872,8 +880,8 @@ button:focus {
 
 .btn-primary {
   color: #fff !important;
-  background-color: #623686 !important;
-  border-color: #623686 !important;
+  background-color: var(--main-color) !important;
+  border-color: var(--main-color) !important;
 }
 
 .btn-primary:hover {
@@ -975,7 +983,6 @@ button:focus {
 .swiper-pagination-bullet-active {
   background-color: var(--main-color) !important;
   padding: 7px;
-  box-shadow: 0 0 3px 2px var(--main-color);
 }
 
 .quote-card-view {
@@ -1257,4 +1264,13 @@ button:focus {
 
 .circular-menu.active .menu-item:nth-child(4) {
   transform: translate3d(-6em, 2.5em, 0);
+}
+.ending {
+  a {
+    color: var(--main-color);
+    transition: 0.3s;
+  }
+  &:hover a {
+    color: #510be8;
+  }
 }
