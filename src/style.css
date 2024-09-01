@@ -482,10 +482,8 @@ button:focus {
   border-radius: 25px;
   transform: rotate(5deg);
   transition: 0.2s;
-  max-height: 420px;
-
-  height: 300px !important;
-  width: 300px !important;
+  height: 380px !important;
+  width: 380px !important;
   @media (width < 991px) {
     max-height: 250px;
     max-width: 250px;
