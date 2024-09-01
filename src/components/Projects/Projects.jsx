@@ -11,7 +11,7 @@ function Projects() {
     <Container fluid className="project-section pt-5">
       <Container id="projects">
         <h1 className="main-name fw-bold">
-          My Works
+          My Recent Works
         </h1>
         <p style={{ color: "white" }}>
           Here are a few projects I have worked on recently.
@@ -60,7 +60,9 @@ function Projects() {
             />
           </Col>
         </Row>
-        <h2 className="text-white m-0 pb-5 ending fw-bold">And More On My <a href="https://github.com/abdallah-ahmed222" className="text-decoration-none d-block" target="blank">Git Hub</a></h2>
+
+        <a className="text-white my-5 ending p-3 px-4 fw-bold fork-btn-inner text-decoration-none" href="https://github.com/abdallah-ahmed222" target="blank">More On My Git Hub</a>
+
       </Container>
     </Container>
   );

@@ -97,7 +97,7 @@ function Home() {
 
             <Col
               md={5}
-              style={{ paddingBottom: 20 }}
+              style={{ paddingBottom: 40 }}
               className="position-relative order-first order-md-last d-flex align-items-center justify-content-center"
             >
               <div
@@ -107,7 +107,7 @@ function Home() {
                 <img
                   src={homeLogo}
                   alt="home pic"
-                  className="img-fluid home-hero"
+                  className="home-hero"
                 />
               </div>
             </Col>

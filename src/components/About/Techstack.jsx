@@ -1,6 +1,6 @@
 // import { Col, Row } from "react-bootstrap";
 import { techStackData } from "../../helpers/data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MyVerticallyCenteredModal } from "../ModalComponent";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,16 +9,44 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 function Techstack() {
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+  let slidesNumber = 5
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  switch (true) {
+    case windowDimensions.width > 992:
+      slidesNumber = 5;
+      break
+    case windowDimensions.width < 992 && windowDimensions.width > 775:
+      slidesNumber = 3;
+      break
+    case windowDimensions.width < 775:
+      slidesNumber = 1
+      break
+  }
   const [modalShow, setModalShow] = useState(false);
   const [data, setData] = useState([]);
   return (
     <>
       <Swiper
         style={{ height: "40vh" }}
+        loop={true}
+
         rewind={true}
         spaceBetween={30}
         centeredSlides={true}
-        slidesPerView={5}
+        slidesPerView={slidesNumber}
         // spaceBetween={30}
         autoplay={{
           delay: 2500,
